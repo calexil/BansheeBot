@@ -17,6 +17,8 @@ client.on('message', message => {
   	}
 });
 
+setTimeout( function ( ) { alert( "moo" ); }, 10000 ); //displays msg in 10 seconds
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
