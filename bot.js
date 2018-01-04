@@ -11,6 +11,12 @@ client.on('message', message => {
   	}
 });
 
+client.on('message2', message => {
+    if (message.content === 'test') {
+    	message.reply('it worked...');
+  	}
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
