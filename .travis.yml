@@ -1,3 +1,5 @@
-language: java
-distro: xenial
-
+sudo: false
+language: node_js
+node_js:
+  - 'node'
+  - '7.10'
