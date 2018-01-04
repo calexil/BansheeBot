@@ -1,2 +1,3 @@
-language: node_js
+language: java
+distro: xenial
 
