@@ -1,7 +1,7 @@
 # Commands
 
-You say: ping  
-**I say: pong**
+You say: *ping*  
+I say: **pong**
 
 You say: test  
 I say: it worked...
