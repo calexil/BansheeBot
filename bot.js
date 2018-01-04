@@ -17,6 +17,7 @@ client.on('message', message => {
   	}
 });
 
+setTimeout(function() { message("my message"); }, 100);
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
