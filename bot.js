@@ -13,7 +13,7 @@ client.on('message', message => {
 
 client.on('timer', message => {
     if (timeStamp.content === '>0') {
-    	message.reply('--banshee-query now-playing');
+    	message.reply('Calexil is listening to ''banshee --query-title --query-artist --query-album');
   	}
 });
 

@@ -11,5 +11,11 @@ client.on('message', message => {
   	}
 });
 
+client.on('timer', message => {
+    if (timeStamp.content === '>0') {
+    	message.reply('--banshee-query now-playing');
+  	}
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
