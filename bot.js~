@@ -23,5 +23,23 @@ client.on('message', message => {
   	}
 });
 
+client.on('message', message => {
+    if (message.content === 'best girl') {
+    	message.reply('Big Band%20:clappa:');
+  	}
+});
+
+client.on('message', message => {
+    if (message.content === 'best grill?') {
+    	message.reply('Big Band%20:clappa:');
+  	}
+});
+
+client.on('message', message => {
+    if (message.content === 'best grill') {
+    	message.reply('Big Band%20:clappa:');
+  	}
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
