@@ -11,11 +11,6 @@ client.on('message', message => {
   	}
 });
 
-client.on('timer', message => {
-    if (timeStamp.content === '>0') {
-    	message.reply('Calexil is listening to ''banshee --query-title --query-artist --query-album');
-  	}
-});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
