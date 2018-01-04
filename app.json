@@ -1,0 +1,27 @@
+{
+  "name": "BansheeBot",
+  "description": "A simple bot that reads the song info from the current track in Banshee media player and displays it in a Discord channel.",
+  "scripts": {
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
