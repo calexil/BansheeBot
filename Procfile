@@ -1,1 +1,1 @@
-worker: node now-playing-bot.js
+worker: node bot.js
