@@ -18,13 +18,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === 'best girl?') {
-    	message.reply('Big Band...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'best girl') {
+    if (message.content === 'best girl?', 'best girl') {
     	message.reply('Big Band...');
   	}
 });
