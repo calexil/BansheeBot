@@ -53,6 +53,12 @@ client.on('message', message => {
   	}
 });
 
+client.on('message', message => {
+    if (message.content === 'song') {
+    	message.reply('currently playing: https://wagnaria.xyz/now/calexil');
+  	}
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
