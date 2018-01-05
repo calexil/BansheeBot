@@ -1,62 +1,25 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const responseObject = {
+  "test": "It worked!",
+  "best girl?": "Big Band.",
+  "best girl": "Big Band.",
+  "best grill": "Big Band.",
+  "best grill?": "Big Band.",
+  "hi": "hello there, you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
+  "commands": "you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
+  "song": "currently playing: https://wagnaria.xyz/now/calexil"
+};
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'test') {
-    	message.reply('it worked...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'best girl?') {
-    	message.reply('Big Band...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'best girl') {
-    	message.reply('Big Band...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'best grill?') {
-    	message.reply('Big Band...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'best grill') {
-    	message.reply('Big Band...');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'hi') {
-    	message.reply('hello there, you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'commands') {
-    	message.reply('you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'song') {
-    	message.reply('currently playing: https://wagnaria.xyz/now/calexil');
-  	}
+client.on("message", (message) => {
+  if(responseObject[message.content]) {
+    message.channel.send(responseObject[message.content]);
+  }
 });
 
 
