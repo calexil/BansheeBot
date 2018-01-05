@@ -2,6 +2,6 @@
 
 
 
-A simple bot that reads the song info from the current track scrobble on a user's last.fm account and displays it in a Discord channel.
+A simple bot that reads the song info from the currently playing track and displays it in a Discord channel.
 
 Work in progress
