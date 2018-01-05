@@ -7,9 +7,9 @@ const responseObject = {
   "best girl": "Big Band.",
   "best grill": "Big Band.",
   "best grill?": "Big Band.",
-  "hi": "hello there, you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
-  "commands": "you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
-  "song": "currently playing: https://wagnaria.xyz/now/calexil"
+  "hi": "Hello there, I'm a dumb bot written by @calexil#9270, you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
+  "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
+  "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
 
 client.on('ready', () => {
