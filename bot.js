@@ -42,8 +42,6 @@ client.on("message", (message) => {
   }
 });
 
-if(message.is_echo) return; // If the message is from our bot, we ignore it.
-
 // Ping server every 15 minutes to prevent web dyno from sleeping
 setInterval(() => {
  http.get('http://discordjs-heroku.herokuapp.com');
