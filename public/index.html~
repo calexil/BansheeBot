@@ -27,9 +27,9 @@
     </style>
 </head>
 <body>
+<div id="icon"><img src="https://u.teknik.io/w0a8W.png" alt="icon"></div>
     <div id="text">
         <h1>Hello, I'm <i>BansheeBot</i>.</h1>
-        <div id="icon"><img src="https://u.teknik.io/w0a8W.png" alt="icon"></div>
         <p>You can read more about me on <a href="https://github.com/calexil/BansheeBot">my GitHub page</a>.</p>
         <p><a href="https://discordapp.com/oauth2/authorize?client_id=398220000646660106&scope=bot&permissions=0">Invite me to your server</a></p>
     </div>
