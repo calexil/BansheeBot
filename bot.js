@@ -1,10 +1,22 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
+app.post('/endpoint', (req, res) => {
+    let trackName = req.body.trackName;
+    res.send('Track received!');
+    console.log(`Track: ${trackName}`)
+});
+
+
 
 wget --post-data "trackName=HelloWorld" https://bansheebot.herokuapp.com/endpoint
 
