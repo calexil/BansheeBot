@@ -5,17 +5,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-app.use(express.static('public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
-app.post('/endpoint', (req, res) => {
-    let trackName = req.body.trackName;
-    res.send('Track received!');
-    console.log(`${trackName}`)
-});
-
+// Message Array
 const responseObject = {
   "test": "It worked!",
   "best girl?": "Big Band.",
@@ -27,10 +17,25 @@ const responseObject = {
   "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
 
+//Call the web page with express
+app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Listen for the users local script to post the current track and log it to console
+app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
+app.post('/endpoint', (req, res) => {
+    let trackName = req.body.trackName;
+    res.send('Track received!');
+    console.log(`${trackName}`)
+});
+
+//Show that the bot has launched sucessfully in console
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
+//Reply to keywords in the array
 client.on("message", (message) => {
   if(responseObject[message.content]) {
     message.channel.send(responseObject[message.content]);
@@ -38,5 +43,5 @@ client.on("message", (message) => {
 });
 
 
-// THIS  MUST  BE  THIS  WAY
+// Do not change
 client.login(process.env.BOT_TOKEN);
