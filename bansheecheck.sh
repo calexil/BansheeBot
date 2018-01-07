@@ -12,7 +12,7 @@ do
     if $currentTrack != "$track"
         currentTrack=$track
         curl --data "trackName=$currentTrack" https://bansheebot.herokuapp.com/endpoint
-    sleep 15
+    sleep 25
 then
     sleep 5
 fi
