@@ -6,6 +6,8 @@ const app = express()
 app.use(express.static('public'));
 app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
 
+wget --post-data "trackName=HelloWorld" https://bansheebot.herokuapp.com/endpoint
+
 const responseObject = {
   "test": "It worked!",
   "best girl?": "Big Band.",
