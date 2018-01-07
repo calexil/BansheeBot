@@ -31,12 +31,12 @@ app.post('/endpoint', (req, res) => {
 });
 
 //Show that the bot has launched sucessfully in console
-client.on('ready', () => {
+client.once('ready', () => {
     console.log('I am ready!');
 });
 
 //Reply to keywords in the array
-client.on("message", (message) => {
+client.once("message", (message) => {
   if(responseObject[message.content]) {
     message.channel.send(responseObject[message.content]);
   }
