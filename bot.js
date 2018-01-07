@@ -45,7 +45,7 @@ client.on("message", (message) => {
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
 setInterval(() => {
- http.get('http://discordjs-heroku.herokuapp.com');
+ http.get('http://bansheebot.herokuapp.com');
 }, 900000);
 
 // Do not change
