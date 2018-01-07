@@ -36,7 +36,7 @@ client.on('ready', () => {
 });
 
 //Reply to keywords in the array
-client.on("message", (message) => {
+client.once("message", (message) => {
   if(responseObject[message.content]) {
     message.channel.send(responseObject[message.content]);
   }
