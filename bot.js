@@ -16,8 +16,6 @@ app.post('/endpoint', (req, res) => {
     console.log(`Track: ${trackName}`)
 });
 
-wget --post-data "trackName=HelloWorld" https://bansheebot.herokuapp.com/endpoint
-
 const responseObject = {
   "test": "It worked!",
   "best girl?": "Big Band.",
