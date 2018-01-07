@@ -13,7 +13,7 @@ app.listen(process.env.PORT, () => console.log(`App listening on port ${process.
 app.post('/endpoint', (req, res) => {
     let trackName = req.body.trackName;
     res.send('Track received!');
-    console.log(`Track: ${trackName}`)
+    console.log(`${trackName}`)
 });
 
 const responseObject = {
