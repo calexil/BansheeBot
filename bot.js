@@ -36,10 +36,7 @@ app.post('/endpoint', (req, res) => {
     console.log(`${trackName}`)
 });
 
-// Post the current track in discord
-
-
-// Logic to check the trackName against the previous trackName and post again if the track has changed
+// Post the current track in discord, but only if it has changed
 
 // Show that the bot has launched sucessfully in console
 client.on('ready', () => {
