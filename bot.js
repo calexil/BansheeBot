@@ -19,7 +19,7 @@ const responseObject = {
 };
 
 const currentTrack = {
-    console.log(`${trackName}`)
+    let currentTrack = console.log(`${trackName}`)
 };
 
 // Call the web page with express
