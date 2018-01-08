@@ -6,8 +6,16 @@ A simple bot that reads the song info from the currently playing track in banshe
 ## Installation
 
 * 1: Head to [The bot's website on Heroku, and invite it](https://bansheebot.herokuapp.com/)
-* 2: Download the [bansheecheck.sh script](https://github.com/calexil/BansheeBot/blob/master/bansheecheck.sh) and set it to run at your systems startup.
+* 2: Download the [bansheecheck.sh script](https://github.com/calexil/BansheeBot/blob/master/bansheecheck.sh) and set it to run at your systems startup with `bash bansheecheck.sh`
 * 3: Check out the [Command list here](https://github.com/calexil/BansheeBot/blob/master/Commands.md)
 * 4: Play music through Banshee media player, and configure the bot to only be voiced in a #music_channel on your discord server
+
+## Bug Reporting
+### [Submit Issues here](https://github.com/calexil/BansheeBot/issues/new)
+
+## Credits
+
+* [Calexil](https://github.com/calexil)
+* [TimboKZ](https://github.com/TimboKZ)
 
 Work in progress
