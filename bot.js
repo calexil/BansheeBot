@@ -42,7 +42,7 @@ app.post('/endpoint', (req, res) => {
 //        message.channel.send(`$trackName`)
 //};
 
-// Show that the bot has launched sucessfully in console
+// Show that the bot has launched successfully in console
 client.on('ready', () => {
     console.log('I am ready!');
 });
