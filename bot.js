@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 // Message Array
 const responseObject = {
   "test": "It worked!",
-  regex.exp:(best g****): "Big Band.",
+  "best girl?": "Big Band.",
   "best girl": "Big Band.",
   "best grill": "Big Band.",
   "best grill?": "Big Band.",
