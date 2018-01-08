@@ -37,11 +37,8 @@
         <div id="icon">
             <img src="https://u.teknik.io/w0a8W.png" alt="icon">
         </div>
-        <xmp theme="united">
+<p><a href="https://www.codefactor.io/repository/github/calexil/bansheebot"><img src="https://www.codefactor.io/repository/github/calexil/bansheebot/badge" alt="CodeFactor"></a> <a href="https://bansheebot.herokuapp.com/"><img src="https://img.shields.io/badge/Heroku-Deployed-8460aa.svg" alt="icon"></a> <a href="https://travis-ci.org/calexil/BansheeBot"><img src="https://travis-ci.org/calexil/BansheeBot.svg?branch=master" alt="Build Status"></a> <a href="https://codeclimate.com/github/calexil/BansheeBot/maintainability"><img src="https://api.codeclimate.com/v1/badges/5cea1da12f8d344b472f/maintainability" alt="Maintainability"></a> <a href="https://github.com/calexil/BansheeBot/issues"><img src="https://img.shields.io/github/issues/calexil/BansheeBot.svg" alt="GitHub issues"></a></p>
 
-        # ![icon](https://u.teknik.io/znQBF.png) BansheeBot [![CodeFactor](https://www.codefactor.io/repository/github/calexil/bansheebot/badge)](https://www.codefactor.io/repository/github/calexil/bansheebot) [![icon](https://img.shields.io/badge/Heroku-Deployed-8460aa.svg)](https://bansheebot.herokuapp.com/) [![Build Status](https://travis-ci.org/calexil/BansheeBot.svg?branch=master)](https://travis-ci.org/calexil/BansheeBot) [![Maintainability](https://api.codeclimate.com/v1/badges/5cea1da12f8d344b472f/maintainability)](https://codeclimate.com/github/calexil/BansheeBot/maintainability) [![GitHub issues](https://img.shields.io/github/issues/calexil/BansheeBot.svg)](https://github.com/calexil/BansheeBot/issues)
-
-        </xmp>
         <p>I'm a dumb bot written by <a href="https://github.com/calexil"><b>Calexil</b></a> and <a href="https://github.com/TimboKZ"><b>TimboKZ</b></a>
             <br />I display the song you are currently playing in <a href="https://en.wikipedia.org/wiki/Banshee_(media_player)"><b>Banshee Media Player</b></a> in your discord server.
             <br />You can read more about me on <a href="https://github.com/calexil/BansheeBot"><b>my GitHub page</b></a>.</p>
@@ -49,5 +46,5 @@
         </p>
     </div>
 </body>
-
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/9014afdb/cloudflare-static/rocket.min.js"></script>
 </html>
