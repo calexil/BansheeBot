@@ -18,6 +18,9 @@ const responseObject = {
   "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
 
+const trackName = {console.log(`${trackName}`)
+};
+
 // Call the web page with express
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -30,6 +33,11 @@ app.post('/endpoint', (req, res) => {
     res.send('Track received!');
     console.log(`${trackName}`)
 });
+
+// Post the current track in discord
+
+
+// Logic to check the trackName against the previous trackName and post again if the track has changed
 
 // Show that the bot has launched sucessfully in console
 client.on('ready', () => {
