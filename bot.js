@@ -13,7 +13,7 @@ const responseObject = {
     "best girl": "Big Band.",
     "best grill": "Big Band.",
     "best grill?": "Big Band.",
-    "hi": "Hello there, I'm a dumb bot written by @calexil#9270 and @Timberius#8180 , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
+    "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
