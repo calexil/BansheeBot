@@ -18,7 +18,8 @@ const responseObject = {
     "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
 
-//const trackName = {console.log(`${trackName}`)
+//const trackName = {
+//console.log(`${trackName}`)
 //};
 
 // Call the web page with express
