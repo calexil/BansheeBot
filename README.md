@@ -18,4 +18,3 @@ A simple bot that reads the song info from the currently playing track in banshe
 * [Calexil](https://github.com/calexil)
 * [TimboKZ](https://github.com/TimboKZ)
 
-Work in progress
