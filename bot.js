@@ -18,9 +18,9 @@ const responseObject = {
     "song": "Currently playing: https://wagnaria.xyz/now/calexil"
 };
 
-const currentTrack = {
-    let currentTrack = console.log(`${trackName}`)
-};
+// const currentTrack = {
+//    let currentTrack = console.log(`${trackName}`)
+// };
 
 // Call the web page with express
 app.use(express.static('public'));
