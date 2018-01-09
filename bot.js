@@ -6,6 +6,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+let trackChannel = null;
+
 // Message Array
 const responseObject = {
     "test": "It worked!",
@@ -34,14 +36,6 @@ app.post('/endpoint', (req, res) => {
 });
 
 // Post the current track in discord, but only if it has changed
-//client.on("trackName", message) => {
-//    if (req.body.trackName) = (req.body.trackName) {
-//        message.channel.send()
-//    else
-//    if (req.body.trackName) != (req.body.trackName) {
-//        message.channel.send(`$trackName`)
-//};
-
 // Show that the bot has launched successfully in console
 client.on('ready', () => {
     console.log('I am ready!');
