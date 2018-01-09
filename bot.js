@@ -32,12 +32,25 @@ app.listen(process.env.PORT, () => console.log(`App listening on port ${process.
 app.post('/endpoint', (req, res) => {
     let trackName = req.body.trackName;
     res.send('Track received!');
-    console.log(`${trackName}`)
+    console.log(`Received ${trackName}`);
+
+    // Make sure music channel is defined
+    if (musicChannel) {
+        musicChannel.send(trackName);
+    }
 });
 
 // Post the current track in discord, but only if it has changed
 // Show that the bot has launched successfully in console
 client.on('ready', () => {
+    let musicChannelId = '318919013101076481';
+    client.channels.find(channel => channel.id === musicChannelId)
+        .then(_musicChannel => {
+            if (!_musicChannel) throw new Error('Channel with this ID was not found!');
+            musicChannel = _musicChannel;
+        })
+        .catch(error => console.error('Couldn't find music channel:', error));
+
     console.log('I am ready!');
 });
 
