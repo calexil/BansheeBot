@@ -49,7 +49,7 @@ client.on('ready', () => {
             if (!_musicChannel) throw new Error('Channel with this ID was not found!');
             musicChannel = _musicChannel;
         })
-        .catch(error => console.error('Couldn't find music channel:', error));
+        .catch(error => console.error('Could not find music channel:', error));
 
     console.log('I am ready!');
 });
