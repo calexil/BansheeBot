@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-let trackName = null;
+let trackChannel = null;
 
 // Message Array
 const responseObject = {
@@ -45,7 +45,7 @@ app.post('/endpoint', (req, res) => {
 client.on('ready', () => {
     let musicChannelId = '318919013101076481';
     musicChannel = client.channels.find(channel => channel.id === musicChannelId);
-    if (!musicChannel) console.error('Could not find music channel!'));
+    if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
 });
