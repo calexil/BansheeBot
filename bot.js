@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-let trackChannel = null;
+let trackName = null;
 
 // Message Array
 const responseObject = {
@@ -44,7 +44,7 @@ app.post('/endpoint', (req, res) => {
 // Show that the bot has launched successfully in console
 client.on('ready', () => {
     let musicChannelId = '318919013101076481';
-    musicChannel = client.channels.find(channel => channel.id === musicChannelId)
+    musicChannel = client.channels.find(channel => channel.id === musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!'));
 
     console.log('I am ready!');
