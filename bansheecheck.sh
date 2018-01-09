@@ -8,12 +8,12 @@ do
     artist=$(banshee --query-artist | sed 's/artist: //')
     album=$(banshee --query-album | sed 's/album: //')
     track="Calexil is listening to $title by $artist on $album"
-    echo "Calexil is listening to $title by $artist on $album"
-    if [[ $currentTrack != "$track" ]]
-        currentTrack=$track
+    echo $track
+    if [[ $currentTrack = "$track" ]]
+    then
+        sleep 30
+    else
         curl --data "trackName=$currentTrack" https://bansheebot.herokuapp.com/endpoint
-    sleep 25
-then
-    sleep 5
-fi
+        currentTrack=$track
+    fi
 done
