@@ -34,7 +34,7 @@ app.post('/endpoint', (req, res) => {
     res.send('Track received!');
     console.log(`Received ${trackName}`);
 
-    // Make sure music channel is defined
+// Make sure music channel is defined
     if (musicChannel) {
         musicChannel.send(trackName);
     }
