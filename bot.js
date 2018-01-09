@@ -44,12 +44,8 @@ app.post('/endpoint', (req, res) => {
 // Show that the bot has launched successfully in console
 client.on('ready', () => {
     let musicChannelId = '318919013101076481';
-    client.channels.find(channel => channel.id === musicChannelId)
-        .then(_musicChannel => {
-            if (!_musicChannel) throw new Error('Channel with this ID was not found!');
-            musicChannel = _musicChannel;
-        })
-        .catch(error => console.error('Could not find music channel:', error));
+    musicChannel = client.channels.find(channel => channel.id === musicChannelId)
+    if (!musicChannel) console.error('Could not find music channel!'));
 
     console.log('I am ready!');
 });
