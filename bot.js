@@ -6,8 +6,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-let trackChannel = null;
-
 // Message Array
 const responseObject = {
     "test": "It worked!",

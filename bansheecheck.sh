@@ -13,7 +13,7 @@ do
     then
         sleep 30
     else
-        curl --data "trackName=$currentTrack" https://bansheebot.herokuapp.com/endpoint
         currentTrack=$track
+        curl --data "trackName=$currentTrack" https://bansheebot.herokuapp.com/endpoint
     fi
 done
