@@ -55,7 +55,8 @@ client.on("message", (message) => {
 });
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
-setInterval(() => {
+var http = require("http");
+setInterval(function() => {
     http.get('http://bansheebot.herokuapp.com');
 }, 900000);
 
