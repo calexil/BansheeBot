@@ -31,16 +31,16 @@ app.post('/endpoint', (req, res) => {
     res.send('Track received!');
     console.log(`Received ${trackName}`);
 
-// Make sure music channel is defined
+
+// Post the current track in discord
     if (musicChannel) {
         musicChannel.send(trackName);
     }
 });
 
-// Post the current track in discord, but only if it has changed
-// Show that the bot has launched successfully in console
+// Make sure the bot is in the correct channel and show that the bot has launched successfully in console
 client.on('ready', () => {
-    let musicChannelId = '318919013101076481';
+    let musicChannelId = '318919013101076481'; //This number wll need too be set you your desired channel id
     musicChannel = client.channels.find(channel => channel.id === musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!');
 
