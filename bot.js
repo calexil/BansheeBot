@@ -40,7 +40,7 @@ app.post('/endpoint', (req, res) => {
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console
 client.on('ready', () => {
-    let musicChannelId = '318919013101076481'; //This number wll need too be set you your desired channel id
+    let musicChannelId = '318919013101076481'; //This number will need too be set you your desired channel id
     musicChannel = client.channels.find(channel => channel.id === musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!');
 
