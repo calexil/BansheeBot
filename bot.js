@@ -58,7 +58,7 @@ client.on("message", (message) => {
 var http = require("http");
 setInterval(function() {
     http.get('http://bansheebot.herokuapp.com');
-}, 900000);
+}, 1500000);
 
 // Do not change
 client.login(process.env.BOT_TOKEN);
