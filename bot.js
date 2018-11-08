@@ -13,6 +13,10 @@ const responseObject = {
     "best girl": "Big Band.",
     "best grill": "Big Band.",
     "best grill?": "Big Band.",
+    "best gurl": "Big Band.",
+    "best gurl?": "Big Band.",
+    "best booty": "Squigly, Duh.",
+    "best booty?": "Squigly, Duh.",
     "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
@@ -54,12 +58,6 @@ client.on("message", (message) => {
     }
 });
 
-/*object.keys(responseObject).forEach(function(phrase) {
-    if (my_input.contains(phrase) {
-        response = phrase_responses[phrase];
-        bot.sendMessage(message, response);
-    }
-});*/
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
 var http = require("http");
