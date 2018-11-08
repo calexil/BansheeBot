@@ -55,7 +55,7 @@ client.on("message", (message) => {
 });
 
 object.keys(responseObject).forEach(function(phrase) {
-    if (my_input.contains(phrase) {
+    if (my_input.contains(phrase)
         response = phrase_responses[phrase];
         bot.sendMessage(message, response);
     };
