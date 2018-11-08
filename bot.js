@@ -62,7 +62,6 @@ Object.keys(phrase_responses).forEach(function(phrase) {
 
 });
 
-
 // Ping server every 15 minutes to prevent web dyno from sleeping
 var http = require("http");
 setInterval(function() {
