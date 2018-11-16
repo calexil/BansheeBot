@@ -21,7 +21,7 @@ const responseObject = {
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
 
-string.replace(s/best g\(ir|ri|ur\)ll?\?, 'Big Band.');
+console.log("best girll?".replace(/best g(ir|ri|ur)ll?/gi, "Big Band."));
 
 // Call the web page with express
 app.use(express.static('public'));
