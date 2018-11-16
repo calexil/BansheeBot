@@ -11,7 +11,7 @@ const responseObject = {
     "test": "It worked!",
     "best girl?": "Big Band.",
     "best girl": "Big Band.",
-    "[/best g[iru]ll?\?/]": "Big Band.",
+    "/best g[iru]ll?\?/": "Big Band.",
     "best grill": "Big Band.",
     "best grill?": "Big Band.",
     "best gurl": "Big Band.",
