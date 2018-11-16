@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 
 // Message Array
 const responseObject = {
-	console.log("best girll?".replace(/best g(ir|ri|ur)l+\??/gi, "Big Band."));
     "test": "It worked!",
     "best booty": "Squigly, Duh.",
     "best booty?": "Squigly, Duh.",
@@ -16,8 +15,7 @@ const responseObject = {
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
 
-console.log("best girll?".replace(/best g(ir|ri|ur)l+\??/gi, "Big Band."));
-
+	
 // Call the web page with express
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -46,6 +44,7 @@ client.on('ready', () => {
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
+    console.log("best girl?".replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
 });
 
 // Reply to keywords in the array
