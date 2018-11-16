@@ -65,7 +65,7 @@ client.on("message", (message) => {
 });*/
 let rg = /best g(ir|ri|ur)l+\??/igy;
  
-client.on( "message", (message) -> {
+client.on( "message", (message) => {
   let m = message.content.replace( rg, "Big Band" );
  
   if( rg.lastIndex > 0 ) {
