@@ -21,7 +21,7 @@ const responseObject = {
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
 
-console.log("best girll?".replace(/best g(ir|ri|ur)l+\??/gi, "Big band"));
+console.log("best girll?".replace(/best g(ir|ri|ur)l+\??/gi, "Big Band."));
 
 // Call the web page with express
 app.use(express.static('public'));
