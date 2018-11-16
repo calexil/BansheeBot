@@ -59,10 +59,20 @@ client.on("message", (message) => {
 });
 
 
-// Reply to regex regarding best girl
+/*// Reply to regex regarding best girl
 client.on("message", (message) => {
         message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
-});
+});*/
+let rg = /best g(ir|ri|ur)l+\??/igy;
+ 
+client.on( "message", (message) -> {
+  let m = message.content.replace( rg, "Big Band" );
+ 
+  if( rg.lastIndex > 0 ) {
+    message.channel.send(m);
+  }
+} );
+
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
 var http = require("http");
