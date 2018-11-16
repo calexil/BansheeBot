@@ -11,7 +11,6 @@ const responseObject = {
     "test": "It worked!",
     "best girl?": "Big Band.",
     "best girl": "Big Band.",
-    (/best g[iru]{1-2}ll?\?/): "Big Band.",
     "best grill": "Big Band.",
     "best grill?": "Big Band.",
     "best gurl": "Big Band.",
@@ -21,6 +20,8 @@ const responseObject = {
     "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
+
+string.replace(s/best g\(ir|ri|ur\)ll?\?, 'Big Band.');
 
 // Call the web page with express
 app.use(express.static('public'));
