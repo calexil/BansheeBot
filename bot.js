@@ -64,9 +64,9 @@ client.on("message", (message) => {
         message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
 });*/
 let rg = /best g(ir|ri|ur)l+\??/igy;
- 
+
 client.on( "message", (message) => {
-  let m = message.content.replace( rg, "Big Band" );
+  let m = message.content.replace( rg, "Big Band." );
  
   if( rg.lastIndex > 0 ) {
     message.channel.send(m);
