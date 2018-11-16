@@ -9,19 +9,17 @@ const bodyParser = require('body-parser');
 // Message Array
 const responseObject = {
     "test": "It worked!",
-    "best girl?": "Big Band.",
+/*    "best girl?": "Big Band.",
     "best girl": "Big Band.",
     "best grill": "Big Band.",
     "best grill?": "Big Band.",
     "best gurl": "Big Band.",
-    "best gurl?": "Big Band.",
+    "best gurl?": "Big Band.",*/
     "best booty": "Squigly, Duh.",
     "best booty?": "Squigly, Duh.",
     "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
-
-    console.log("best girl?".replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
 	
 // Call the web page with express
 app.use(express.static('public'));
@@ -51,7 +49,6 @@ client.on('ready', () => {
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
-    console.log("best girl?".replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
 });
 
 // Reply to keywords in the array
@@ -61,6 +58,13 @@ client.on("message", (message) => {
     }
 });
 
+
+// Reply to regex regarding best girl
+client.on("message", (message) => {
+    if (responseObject[message.content]) {
+        message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
+    }
+});
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
 var http = require("http");
