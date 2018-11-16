@@ -61,9 +61,7 @@ client.on("message", (message) => {
 
 // Reply to regex regarding best girl
 client.on("message", (message) => {
-    if (responseObject[message.content]) {
         message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
-    }
 });
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
