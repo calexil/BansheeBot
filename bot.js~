@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // Message Array
-const responseObject = {
+/*const responseObject = {
     "test": "It worked!",
     "best girl?": "Big Band.",
     "best girl": "Big Band.",
@@ -19,7 +19,7 @@ const responseObject = {
     "best booty?": "Squigly, Duh.",
     "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
-};
+};*/
 
 console.log("best girll?".replace(/best g(ir|ri|ur)l+\??/gi, "Big Band."));
 
