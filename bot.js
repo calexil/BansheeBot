@@ -66,11 +66,11 @@ client.on("message", (message) => {
 let rg = /best g(ir|ri|ur)l+\??/igy;
 
 client.on( "message", (message) => {
-  let m = message.content.replace( rg, "Big Band." );
+  let mes = message.content.replace( rg, "Big Band." );
  
   if( rg.lastIndex > 0 ) {
-    message.channel.send(m);
-    console.log(m);
+    message.channel.send(mes);
+    console.log(mes);
   }
 } );
 
