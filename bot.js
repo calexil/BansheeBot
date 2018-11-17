@@ -12,7 +12,7 @@ const responseObject = {
     "best booty": "Squigly, Duh.",
     "best booty?": "Squigly, Duh.",
     "!help": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
-    "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
+    "!commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
 
 // Reply to keywords in the array
