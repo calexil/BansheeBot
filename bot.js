@@ -70,6 +70,7 @@ client.on( "message", (message) => {
  
   if( rg.lastIndex > 0 ) {
     message.channel.send(m);
+    console.log(m);
   }
 } );
 
