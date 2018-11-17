@@ -28,7 +28,7 @@ client.on("message", (message) => {
 let rg = /best g(ir|ri|ur)l+\??/ig;
  
 client.on( "message", (message) => {
-  let m = message.content.replace( rg, "Big Band" );
+  let m = message.content.replace( rg, "Big Band." );
  
   if( m != message.content ) {
     message.channel.send(m);
