@@ -38,7 +38,7 @@ let rgContent = /best g(ir|ri|ur)l+\??/igy;
 client.on( "message", (message) => {
   let msContent = message.content.replace( rgContent, "Big Band." );
  
-  if( rg.lastIndex > 0 ) {
+  if( rgContent.lastIndex > 0 ) {
     message.channel.send(msContent);
     console.log(` ${msContent}`);
   }
