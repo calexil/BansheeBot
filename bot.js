@@ -33,14 +33,14 @@ client.on("message", (message) => {
 /*client.on("message", (message) => {
         message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
 });*/
-let rg = /best g(ir|ri|ur)l+\??/igy;
+let rgContent = /best g(ir|ri|ur)l+\??/igy;
 
 client.on( "message", (message) => {
-  let ms = message.content.replace( rg, "Big Band." );
+  let msContent = message.content.replace( rgContent, "Big Band." );
  
   if( rg.lastIndex > 0 ) {
-    message.channel.send(ms);
-    console.log(` ${ms}`);
+    message.channel.send(msContent);
+    console.log(` ${msContent}`);
   }
 } );
 
