@@ -20,7 +20,30 @@ const responseObject = {
     "hi": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
-	
+
+// Reply to keywords in the array
+client.on("message", (message) => {
+    if (responseObject[message.content]) {
+        message.channel.send(responseObject[message.content]);
+    }
+});
+
+
+// Reply to regex regarding best girl
+/*client.on("message", (message) => {
+        message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
+});*/
+let rg = /best g(ir|ri|ur)l+\??/igy;
+
+client.on( "message", (message) => {
+  let ms = message.content.replace( rg, "Big Band." );
+ 
+  if( rg.lastIndex > 0 ) {
+    message.channel.send(ms);
+    console.log(` ${ms}`);
+  }
+} );
+
 // Call the web page with express
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -50,30 +73,6 @@ client.on('ready', () => {
 
     console.log('I am ready!');
 });
-
-// Reply to keywords in the array
-client.on("message", (message) => {
-    if (responseObject[message.content]) {
-        message.channel.send(responseObject[message.content]);
-    }
-});
-
-
-/*// Reply to regex regarding best girl
-client.on("message", (message) => {
-        message.channel.send(message.content.replace(/best g(ir|ri|ur)l+\??/g, "Big Band."));
-});*/
-let rg = /best g(ir|ri|ur)l+\??/igy;
-
-client.on( "message", (message) => {
-  let mes = message.content.replace( rg, "Big Band." );
- 
-  if( rg.lastIndex > 0 ) {
-    message.channel.send(mes);
-    console.log(mes);
-  }
-} );
-
 
 // Ping server every 15 minutes to prevent web dyno from sleeping
 var http = require("http");
