@@ -26,7 +26,7 @@ h1{font-family:'Playfair Display', serif;font-weight:normal;font-size:200%;}</st
 <a href="https://github.com/calexil/BansheeBot/issues"><img src="https://img.shields.io/github/issues/calexil/BansheeBot.svg" alt="GitHub issues"></a>
 </p>
 <p>I'm a dumb bot written by <a href="https://github.com/calexil"><b>Calexil</b></a> and <a href="https://github.com/TimboKZ"><b>TimboKZ</b></a>
-<br/>I display the song you are currently playing in <a href="https://en.wikipedia.org/wiki/Banshee_(media_player)"><b>Banshee Media Player</b></a> in your discord server.
+<br/>I display the song you are currently playing in <a href="https://banshee.fm"><b>Banshee Media Player</b></a> or <a href="https://wiki.gnome.org/Apps/Rhythmbox"><b>Rhythmbox</b></a> in your discord server.
 <br/>You can read more about me on <a href="https://github.com/calexil/BansheeBot"><b>my GitHub page</b></a>.</p>
 </p>
 </div>
