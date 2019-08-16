@@ -2,7 +2,7 @@
 
 
 ## Intro
-A simple bot that reads the song info from the currently playing track in banshee media player and displays it in a Discord channel. Also includes some silly commands.
+A simple bot that reads the song info from the currently playing track in Banshee media player or Rhythmbox media player and displays it in a Discord channel. Also includes some silly commands.
 
 ## Installation
 
