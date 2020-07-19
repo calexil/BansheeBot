@@ -23,7 +23,7 @@ client.on("message", (message) => {
 });
 
 
-// Reply to regex regarding best girl
+// Reply to regex regarding best girl and booty
 
 let rg = /best g(ir|ri|ur)l+\??/ig;
  
@@ -34,8 +34,6 @@ client.on( "message", (message) => {
     message.channel.send(m);
   }
 } );
-
-// Reply to regex regarding best girl
 
 let rg = /best b(oot)y+\??/ig;
  
