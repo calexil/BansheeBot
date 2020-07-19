@@ -26,26 +26,17 @@ client.on("message", (message) => {
 // Reply to regex regarding best girl
 
 let rg = /best g(ir|ri|ur)l+\??/ig;
- 
-client.on( "message", (message) => {
-  let m = message.content.replace( rg, "Big Band." );
- 
-  if( m != message.content ) {
-    message.channel.send(m);
-  }
-} );
-
-// Reply to regex regarding best girl
-
 let rh = /best b(oot)y+\??/ig;
  
 client.on( "message", (message) => {
+  let m = message.content.replace( rg, "Big Band." );
   let m = message.content.replace( rh, "Squigly, duh." );
- 
+  
   if( m != message.content ) {
     message.channel.send(m);
   }
 } );
+
 
 // Call the web page with express
 app.use(express.static('public'));

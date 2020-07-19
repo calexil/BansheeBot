@@ -37,10 +37,10 @@ client.on( "message", (message) => {
 
 // Reply to regex regarding best girl
 
-let rg = /best b(oot)y+\??/ig;
+let rh = /best b(oot)y+\??/ig;
  
 client.on( "message", (message) => {
-  let m = message.content.replace( rg, "Squigly, duh." );
+  let m = message.content.replace( rh, "Squigly, duh." );
  
   if( m != message.content ) {
     message.channel.send(m);
