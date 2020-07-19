@@ -30,10 +30,13 @@ let rh = /best b(oot)y+\??/ig;
  
 client.on( "message", (message) => {
   let m = message.content.replace( rg, "Big Band." );
-  let m = message.content.replace( rh, "Squigly, duh." );
+  let n = message.content.replace( rh, "Squigly, duh." );
   
   if( m != message.content ) {
     message.channel.send(m);
+  }
+  if( n != message.content ) {
+    message.channel.send(n);
   }
 } );
 
