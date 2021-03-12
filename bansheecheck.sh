@@ -4,8 +4,8 @@ currentTrack="Calexil is listening to $title by $artist on $album"
 
 while :
 do
-    title=$(rhythmbox-client --no-start --print-playing-format %tt | sed 's/title: //')
-    artist=$(rhythmbox-client --no-start --print-playing-format %aa | sed 's/artist: //')
+    title=$(banshee --query-title | sed 's/title: //')
+    artist=$(banshee --query-artist | sed 's/artist: //')
     album=$(banshee --query-album | sed 's/album: //')
     track="Calexil is listening to $title by $artist on $album"
     echo $track
