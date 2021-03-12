@@ -9,10 +9,10 @@ I say: *Big Band.*
 You say: **best booty**  
 I say: *Squigly, Duh.*
 
-You say: **good bot**
+You say: **good bot**  
 I say: *Thanks.*
 
-You say: **bad bot**
+You say: **bad bot**  
 I say: *I sowwy, =uwu=*
 
 You say: **!help**  
