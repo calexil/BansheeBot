@@ -11,7 +11,7 @@ const responseObject = {
     "test": "It worked!",
     "good bot": "Thanks.",
     "bad bot": "I sowwy, =uwu=",
-    "69": "Nice."
+    "69": "Nice.",
     "!help": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "!commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
