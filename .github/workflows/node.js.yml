@@ -29,6 +29,5 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    name: Check if BansheeBot is deployed on Heroku
-      run: |
-        wget https://bansheebot.herokuapp.com/
+    - name: Check if BansheeBot is deployed on Heroku
+    - run: wget https://bansheebot.herokuapp.com/
