@@ -60,6 +60,7 @@ client.on('ready', () => {
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
+    console.log(inBotConfigs[herokuApp], inBotConfigs[pingInterval]);
 });
 
 setInterval(function() {
