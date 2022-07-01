@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const http = require("http"); /* <=== Consider moving to https */
 
-/* Consider moving to slash commands */
+// Message Array
 const responseObject = {
     "test": "It worked!",
     "good bot": "Thanks.",
