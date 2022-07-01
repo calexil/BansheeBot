@@ -5,8 +5,9 @@ const client = new Discord.Client();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const http = require("http"); /* <=== Consider moving to https */
 
-// Message Array
+/* Consider moving to slash commands */
 const responseObject = {
     "test": "It worked!",
     "good bot": "Thanks.",
@@ -16,30 +17,25 @@ const responseObject = {
     "!commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
 };
 
-// Reply to keywords in the array
-client.on("message", (message) => {
-    if (responseObject[message.content]) {
-        message.channel.send(responseObject[message.content]);
-    }
-});
-
+const inBotConfigs = {
+    musicChannelId: "318919013101076481", /* voiceChannelId; obtain by rightclicking the channel and copy id */
+    herokuApp: "http://bansheebot.herokuapp.com", /* Server URL */
+    pingInterval: "1500000", /* Ping server every 15 minutes to prevent web dyno from sleeping */
+};
 
 // Reply to regex regarding best girl
-
 let rg = /best g(ir|ri|ur)l+\??/ig;
 let rh = /best b(oot)y+\??/ig;
  
-client.on( "message", (message) => {
+client.on("message", (message) => {
+  if (responseObject[message.content]) message.channel.send(responseObject[message.content]); /* Reply to keywords in responseObject */
+    
   let m = message.content.replace( rg, "Big Band." );
   let n = message.content.replace( rh, "Squigly, duh." );
   
-  if( m != message.content ) {
-    message.channel.send(m);
-  }
-  if( n != message.content ) {
-    message.channel.send(n);
-  }
-} );
+  if( m != message.content ) message.channel.send(m);
+  if( n != message.content ) message.channel.send(n);
+});
 
 
 // Call the web page with express
@@ -50,33 +46,25 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Listen for the users local script to post the current track and log it to console
-app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
+app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`));
 app.post('/endpoint', (req, res) => {
-    let trackName = req.body.trackName;
     res.send('Track received!');
-    console.log(`Received ${trackName}`);
+    console.log(`Received ${req.body.trackName}`);
 
-
-// Post the current track in discord
-    if (musicChannel) {
-        musicChannel.send(trackName);
-    }
+    if (musicChannel) musicChannel.send(trackName); /* Post the current track in discord */
 });
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console
 client.on('ready', () => {
-    let musicChannelId = '318919013101076481'; //This number will need too be set you your desired channel id
-    musicChannel = client.channels.find(channel => channel.id === musicChannelId);
+    musicChannel = client.channels.find(channel => channel.id === inBotConfigs[musicChannelId]);
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
 });
 
-// Ping server every 15 minutes to prevent web dyno from sleeping
-var http = require("http");
 setInterval(function() {
-    http.get('http://bansheebot.herokuapp.com');
-}, 1500000);
+    http.get(inBotConfigs[herokuApp]);
+}, inBotConfigs[pingInterval]);
 
 // Do not change
 client.login(process.env.BOT_TOKEN);
