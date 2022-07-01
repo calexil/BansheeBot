@@ -2,6 +2,9 @@
   "name": "BansheeBot",
   "description": "BansheeBot",
   "version": "0.0.1",
+  "engines": {
+    "node": "16.x"
+  }
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
