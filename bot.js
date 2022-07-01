@@ -46,10 +46,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Listen for the users local script to post the current track and log it to console
-app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`));
+app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
 app.post('/endpoint', (req, res) => {
+    let trackName = req.body.trackName;
     res.send('Track received!');
-    console.log(`Received ${req.body.trackName}`);
+    console.log(`Received ${trackName}`);
 
     if (musicChannel) musicChannel.send(trackName); /* Post the current track in discord */
 });
