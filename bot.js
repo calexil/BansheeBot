@@ -56,16 +56,15 @@ app.post('/endpoint', (req, res) => {
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console
 client.on('ready', () => {
-    musicChannel = client.channels.find(channel => channel.id === inBotConfigs[musicChannelId]);
+    musicChannel = client.channels.find(channel => channel.id === inBotConfigs.musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
-    console.log(inBotConfigs[herokuApp], inBotConfigs[pingInterval]);
 });
 
 setInterval(function() {
-    http.get(inBotConfigs[herokuApp]);
-}, inBotConfigs[pingInterval]);
+    http.get(inBotConfigs.herokuApp);
+}, inBotConfigs.pingInterval);
 
 // Do not change
 client.login(process.env.BOT_TOKEN);
