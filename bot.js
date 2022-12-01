@@ -1,6 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [32768] });
-const mySecret = `${process.env['TOKEN']}`;
+const mySecret = `${process.env['BOT_TOKEN']}`;
 
 // Express site serving
 const express = require('express');
