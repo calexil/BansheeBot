@@ -1,11 +1,8 @@
-// import Discord from 'discord.js'
-require { Client, GatewayIntentBits } from 'discord.js'
-
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
-// Express site serving
+// Express site serving.
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
