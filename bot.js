@@ -1,5 +1,7 @@
 const { Client, Intents } = require('discord.js');
+require("dotenv").config();
 const client = new Client({ intents: [32768] });
+const mySecret = process.env['TOKEN'];
 
 // Express site serving
 const express = require('express');
@@ -68,4 +70,4 @@ setInterval(function() {
 }, inBotConfigs.pingInterval);
 
 // Do not change
-client.login(process.env.BOT_TOKEN);
+client.login(mySecret);
