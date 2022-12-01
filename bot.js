@@ -1,5 +1,5 @@
 const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [32768] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
 // Express site serving
@@ -62,7 +62,7 @@ client.on('ready', () => {
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
-    console.log(client);
+    console.log(client.options.intents);
 });
 
 setInterval(function() {
