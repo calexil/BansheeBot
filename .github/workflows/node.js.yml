@@ -21,4 +21,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: wget https://bansheebot.herokuapp.com/
+    - run: wget https://bansheebot.onrender.com/
