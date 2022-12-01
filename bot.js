@@ -1,5 +1,4 @@
 const { Client, Intents } = require('discord.js');
-require("dotenv").config();
 const client = new Client({ intents: [32768] });
 const mySecret = process.env['TOKEN'];
 
