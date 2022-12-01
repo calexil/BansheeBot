@@ -19,7 +19,7 @@ const responseObject = {
 
 const inBotConfigs = {
     musicChannelId: "318919013101076481", /* voiceChannelId; obtain by rightclicking the channel and copy id */
-    renderApp: "http://bansheebot.onrender.com", /* Server URL */
+    herokuApp: "http://bansheebot.onrender.com", /* Server URL */
     pingInterval: "1500000", /* Ping server every 15 minutes to prevent web dyno from sleeping */
 };
 
@@ -64,7 +64,7 @@ client.on('ready', () => {
 });
 
 setInterval(function() {
-    http.get(inBotConfigs.renderApp);
+    http.get(inBotConfigs.herokuApp);
 }, inBotConfigs.pingInterval);
 
 // Do not change
