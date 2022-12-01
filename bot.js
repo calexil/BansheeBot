@@ -58,7 +58,7 @@ app.post('/endpoint', (req, res) => {
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console
 client.on('ready', () => {
-    musicChannel = client.channels.cache.get(channel => channel.id === inBotConfigs.musicChannelId);
+    musicChannel = client.channels.cache.get('' === inBotConfigs.musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
