@@ -29,7 +29,7 @@ let rg = /best g(ir|ri|ur)l+\??/ig;
 let rh = /best b(oot)y+\??/ig;
  
 client.on("message", (message) => {
-  if (responseObject[message.content]) message.channel.send(responseObject[message.content]); /* Reply to keywords in responseObject */
+  if (responseObject[message.content]) message.reply(responseObject[message.content]); /* Reply to keywords in responseObject */
     
   let m = message.content.replace( rg, "Big Band." );
   let n = message.content.replace( rh, "Squigly, duh." );
