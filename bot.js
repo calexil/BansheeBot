@@ -28,14 +28,14 @@ const inBotConfigs = {
 let rg = /best g(ir|ri|ur)l+\??/ig;
 let rh = /best b(oot)y+\??/ig;
  
-client.on("message", (message) => {
-  if (responseObject[message.content]) message.reply(responseObject[message.content]); /* Reply to keywords in responseObject */
+client.on("message", (messageCreate) => {
+  if (responseObject[messageCreate.content]) message.reply(responseObject[messageCreate.content]); /* Reply to keywords in responseObject */
     
-  let m = message.content.replace( rg, "Big Band." );
-  let n = message.content.replace( rh, "Squigly, duh." );
+  let m = messageCreate.content.replace( rg, "Big Band." );
+  let n = messageCreate.content.replace( rh, "Squigly, duh." );
   
-  if( m != message.content ) message.channel.send(m);
-  if( n != message.content ) message.channel.send(n);
+  if( m != messageCreate.content ) message.channel.send(m);
+  if( n != messageCreate.content ) message.channel.send(n);
 });
 
 
