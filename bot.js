@@ -2,13 +2,13 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
-// Express site serving
+// Express site serving.
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const http = require("http"); /* <=== Consider moving to https */
 
-// Message Array
+// Message Array.
 const responseObject = {
     "test": "It worked!",
     "good bot": "Thanks.",
@@ -19,12 +19,11 @@ const responseObject = {
 };
 
 const inBotConfigs = {
-    musicChannelId: "318919013101076481", /* voiceChannelId; obtain by rightclicking the channel and copy id */
-    herokuApp: "http://bansheebot.onrender.com", /* Server URL */
+    renderApp: "http://bansheebot.onrender.com", /* Server URL */
     pingInterval: "1500000", /* Ping server every 15 minutes to prevent web dyno from sleeping */
 };
 
-// Reply to regex regarding best girl
+// Reply to regex regarding best girl.
 let rg = /best g(ir|ri|ur)l+\??/ig;
 let rh = /best b(oot)y+\??/ig;
  
@@ -39,14 +38,14 @@ client.on("messageCreate", (message) => {
 });
 
 
-// Call the web page with express
+// Call the web page with express.
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Listen for the users local script to post the current track and log it to console
+// Listen for the users local script to post the current track and log it to console.
 app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
 app.post('/endpoint', (req, res) => {
     let trackName = req.body.trackName;
@@ -56,18 +55,17 @@ app.post('/endpoint', (req, res) => {
     if (musicChannel) musicChannel.send(trackName); /* Post the current track in discord */
 });
 
-// Make sure the bot is in the correct channel and show that the bot has launched successfully in console
+// Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
 client.on('ready', () => {
     musicChannel = client.channels.cache.get("318919013101076481");
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
-    console.log(client.options.intents);
 });
 
 setInterval(function() {
-    http.get(inBotConfigs.herokuApp);
+    http.get(inBotConfigs.renderApp);
 }, inBotConfigs.pingInterval);
 
-// Do not change
+// Do not change unless you wanna break shit.
 client.login(mySecret);
