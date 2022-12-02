@@ -35,6 +35,7 @@ client.on("messageCreate", (message) => {
   
   if( m != message.content ) message.channel.send(m);
   if( n != message.content ) message.channel.send(n);
+  return
 });
 
 
