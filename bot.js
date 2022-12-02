@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
-// Express site serving.
+// Express site serving
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -28,14 +28,14 @@ const inBotConfigs = {
 let rg = /best g(ir|ri|ur)l+\??/ig;
 let rh = /best b(oot)y+\??/ig;
  
-client.on("message", (messageCreate) => {
-  if (responseObject[messageCreate.content]) message.reply(responseObject[messageCreate.content]); /* Reply to keywords in responseObject */
+client.on("messageCreate", (message) => {
+  if (responseObject[message.content]) message.channel.send(responseObject[message.content]); /* Reply to keywords in responseObject */
     
-  let m = messageCreate.content.replace( rg, "Big Band." );
-  let n = messageCreate.content.replace( rh, "Squigly, duh." );
+  let m = message.content.replace( rg, "Big Band." );
+  let n = message.content.replace( rh, "Squigly, duh." );
   
-  if( m != messageCreate.content ) message.channel.send(m);
-  if( n != messageCreate.content ) message.channel.send(n);
+  if( m != message.content ) message.channel.send(m);
+  if( n != message.content ) message.channel.send(n);
 });
 
 
