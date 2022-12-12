@@ -15,13 +15,6 @@
     "web": {
       "quantity": 1
     }
-  },
-  "addons": [
+  }
 
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
 }
