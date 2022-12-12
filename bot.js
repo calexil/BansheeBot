@@ -20,7 +20,7 @@ const responseObject = {
 
 const inBotConfigs = {
     renderApp: "http://bansheebot.onrender.com", /* Server URL */
-    pingInterval: "1500000", /* Ping server every 15 minutes to prevent web dyno from sleeping */
+    pingInterval: "1500000", /*  */
 };
 
 // Reply to regex regarding best girl.
@@ -35,7 +35,6 @@ client.on("messageCreate", (message) => {
   
   if( m != message.content ) message.channel.send(m);
   if( n != message.content ) message.channel.send(n);
-  return
 });
 
 
@@ -45,6 +44,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+// Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
+client.on('ready', () => {
+    musicChannel = client.channels.cache.get("318919013101076481");
+    if (!musicChannel) console.error('Could not find music channel!');
+
+    console.log('I am ready!');
+});
 
 // Listen for the users local script to post the current track and log it to console.
 app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
@@ -56,14 +63,7 @@ app.post('/endpoint', (req, res) => {
     if (musicChannel) musicChannel.send(trackName); /* Post the current track in discord */
 });
 
-// Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
-client.on('ready', () => {
-    musicChannel = client.channels.cache.get("318919013101076481");
-    if (!musicChannel) console.error('Could not find music channel!');
-
-    console.log('I am ready!');
-});
-
+// Ping server every 15 minutes to prevent web dyno from sleeping.
 setInterval(function() {
     http.get(inBotConfigs.renderApp);
 }, inBotConfigs.pingInterval);
