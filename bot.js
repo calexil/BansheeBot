@@ -11,7 +11,7 @@ const http = require("http"); /* <=== Consider moving to https */
 // Message Array.
 const responseObject = {
     "test": "It worked!",
-    "good bot": "Thanks.",
+    "good bot": "Thanks, =uWu=",
     "bad bot": "I sowwy, =uwu=",
     "69": "Nice.",
     "!help": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
