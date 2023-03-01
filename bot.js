@@ -46,12 +46,16 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
+const musicChannelId = "318919013101076481"; // Replace with the actual channel ID
+let musicChannel;
+
 client.on('ready', () => {
-    musicChannel = client.channels.cache.get("318919013101076481");
+    musicChannel = client.channels.cache.get(musicChannelId);
     if (!musicChannel) console.error('Could not find music channel!');
 
     console.log('I am ready!');
 });
+
 
 // Listen for the users local script to post the current track and log it to console.
 app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
