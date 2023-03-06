@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
-const musicChannelId = "318919013101076481"; // Replace with the desired channel ID for notifications.
+const musicChannelId = "318919013101076481"; // Replace with your channel ID for notifications.
 let musicChannel;
 
 client.on('ready', () => {
