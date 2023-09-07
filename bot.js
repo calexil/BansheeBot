@@ -20,7 +20,7 @@ const responseObject = {
 
 const inBotConfigs = {
     renderApp: "http://bansheebot.onrender.com", /* Server URL */
-    pingInterval: "1500000", /*  */
+    pingInterval: "900000", /*  */
 };
 
 // Reply to regex regarding best girl.
