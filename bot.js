@@ -2,6 +2,22 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag} at ${new Date().toISOString()}`);
+  client.user.setPresence({ status: 'online', activities: [{ name: 'Banshee tunes', type: 'LISTENING' }] });
+});
+
+client.on('error', err => console.error('Discord client error:', err));
+client.on('disconnect', () => console.log('Discord disconnected!'));
+client.on('reconnecting', () => console.log('Discord reconnecting...'));
+client.on('warn', info => console.warn('Discord warn:', info));
+
+// In login:
+client.login(process.env.BOT_TOKEN).catch(err => console.error('Login failed:', err));
+
+
+
 // Express site serving.
 const express = require('express');
 const app = express();
