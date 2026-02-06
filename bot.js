@@ -5,7 +5,7 @@ const mySecret = `${process.env['BOT_TOKEN']}`;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag} at ${new Date().toISOString()}`);
-  client.user.setPresence({ status: 'online', activities: [{ name: 'Banshee tunes', type: 'LISTENING' }] });
+  client.user.setPresence({ status: 'online', activities: [{ name: 'Banshee Bot', type: 'LISTENING' }] });
 });
 
 client.on('error', err => console.error('Discord client error:', err));
