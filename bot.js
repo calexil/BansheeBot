@@ -3,19 +3,41 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 const mySecret = `${process.env['BOT_TOKEN']}`;
 
 
+// Add/enhance these event listeners:
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag} at ${new Date().toISOString()}`);
-  client.user.setPresence({ status: 'online', activities: [{ name: 'Banshee Bot', type: 'LISTENING' }] });
+  client.user.setPresence({ 
+    status: 'online', 
+    activities: [{ name: 'Banshee Bot', type: 'LISTENING' }] 
+  });
+  console.log('Presence set to online');
 });
 
-client.on('error', err => console.error('Discord client error:', err));
-client.on('disconnect', () => console.log('Discord disconnected!'));
-client.on('reconnecting', () => console.log('Discord reconnecting...'));
-client.on('warn', info => console.warn('Discord warn:', info));
+client.on('disconnect', (closeEvent) => {
+  console.error('Discord DISCONNECTED:', closeEvent);  // This will log the close code/reason
+});
 
-// In login:
-client.login(process.env.BOT_TOKEN).catch(err => console.error('Login failed:', err));
+client.on('reconnecting', () => {
+  console.log('Discord RECONNECTING...');
+});
 
+client.on('error', (err) => {
+  console.error('Discord CLIENT ERROR:', err);
+});
+
+client.on('warn', (info) => {
+  console.warn('Discord WARN:', info);  // Often catches rate limit hints
+});
+
+// Extra: Listen to raw WebSocket close for more detail
+client.ws.on('close', (code, reason) => {
+  console.error(`WebSocket closed - Code: ${code}, Reason: ${reason || 'No reason provided'}`);
+});
+
+// Your login (with catch for good measure)
+client.login(process.env.BOT_TOKEN)
+  .then(() => console.log('Login promise resolved'))
+  .catch(err => console.error('Login failed:', err));
 
 
 // Express site serving.
