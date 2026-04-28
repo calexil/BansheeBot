@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
-const mySecret = `${process.env['BOT_TOKEN']}`;
+
 
 
 // Add/enhance these event listeners:
@@ -125,7 +125,5 @@ setInterval(() => {
     }).on('error', (e) => {
         console.error('Self-ping error:', e.message);
     });
-}, 900000);
+}, 900000); // Every 15 minutes
 
-// Do not change unless you wanna break shit.
-client.login(mySecret);
