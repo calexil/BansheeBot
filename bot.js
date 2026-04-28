@@ -35,15 +35,6 @@ client.ws.on('close', (code, reason) => {
 });
 
 
-// ====================== DISCORD LOGIN ======================
-console.log('Attempting to login to Discord...');
-console.log('Token length:', process.env.BOT_TOKEN ? process.env.BOT_TOKEN.length : 'MISSING');
-
-client.login(process.env.BOT_TOKEN)
-  .then(() => console.log('Login promise resolved successfully'))
-  .catch(err => console.error('Login promise rejected with error:', err.message));
-
-
 // Message Array.
 const responseObject = {
     "test": "It worked!",
@@ -52,11 +43,6 @@ const responseObject = {
     "69": "Nice.",
     "!help": "Hello there, I'm a dumb bot written by [@calexil#9270](https://github.com/calexil) and [@Timberius#8180](https://github.com/TimboKZ) , you can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md",
     "!commands": "You can see my commands here: https://github.com/calexil/BansheeBot/blob/master/Commands.md"
-};
-
-const inBotConfigs = {
-    renderApp: "http://bansheebot.onrender.com", /* Server URL */
-    pingInterval: "900000", /*  */
 };
 
 // Reply to regex regarding best girl.
@@ -73,6 +59,17 @@ client.on("messageCreate", (message) => {
   if( n != message.content ) message.channel.send(n);
 });
 
+// ====================== DISCORD LOGIN ======================
+console.log('Attempting to login to Discord...');
+console.log('Token length:', process.env.BOT_TOKEN ? process.env.BOT_TOKEN.length : 'MISSING');
+
+client.login(process.env.BOT_TOKEN)
+  .then(() => {
+    console.log('✅ Login promise resolved successfully');
+  })
+  .catch(err => {
+    console.error('❌ Login promise rejected:', err.message);
+  });
 
 // ====================== EXPRESS SERVER ======================
 const express = require('express');
@@ -85,7 +82,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const musicChannelId = "318919013101076481";
+let musicChannel = null;                    // ← Fixed: declare it here
 
+// Second ready listener (music channel setup)
 client.on('ready', () => {
     musicChannel = client.channels.cache.get(musicChannelId);
     if (!musicChannel) {
@@ -100,9 +99,13 @@ client.on('ready', () => {
 app.post('/endpoint', (req, res) => {
     let trackName = req.body.trackName || 'Unknown track';
     console.log(`Received: ${trackName}`);
+    
     if (musicChannel) {
-        musicChannel.send(trackName);
+        musicChannel.send(trackName).catch(err => console.error('Failed to send message:', err));
+    } else {
+        console.log('Warning: musicChannel not ready yet');
     }
+    
     res.send('Track received!');
 });
 
@@ -112,11 +115,11 @@ app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
 });
 
-// Self-ping (mostly useless for keeping Render awake, but harmless)
+// Self-ping
 setInterval(() => {
     http.get(inBotConfigs.renderApp, (res) => {
         console.log(`Self-ping sent - Status: ${res.statusCode}`);
     }).on('error', (e) => {
         console.error('Self-ping error:', e.message);
     });
-}, 900000);   // 15 minutes
+}, 900000);
