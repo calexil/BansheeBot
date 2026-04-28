@@ -34,18 +34,19 @@ client.ws.on('close', (code, reason) => {
   console.error(`WebSocket closed - Code: ${code}, Reason: ${reason || 'No reason provided'}`);
 });
 
-// Your login (with catch for good measure)
+
+// ====================== DISCORD LOGIN ======================
+console.log('Attempting to login to Discord...');
+
 client.login(process.env.BOT_TOKEN)
-  .then(() => console.log('Login promise resolved'))
-  .catch(err => console.error('Login failed:', err));
+  .then(() => {
+    console.log('Login promise resolved successfully');
+  })
+  .catch(err => {
+    console.error('Login failed:', err);
+  });
 
-
-// Express site serving.
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const http = require("http"); /* <=== Consider moving to https */
-
+  
 // Message Array.
 const responseObject = {
     "test": "It worked!",
@@ -76,39 +77,49 @@ client.on("messageCreate", (message) => {
 });
 
 
-// Call the web page with express.
+// ====================== EXPRESS SERVER ======================
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const http = require("http");
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Make sure the bot is in the correct channel and show that the bot has launched successfully in console.
-const musicChannelId = "318919013101076481"; // Replace with your channel ID for notifications.
-let musicChannel;
+const musicChannelId = "318919013101076481";
 
 client.on('ready', () => {
     musicChannel = client.channels.cache.get(musicChannelId);
-    if (!musicChannel) console.error('Could not find music channel!');
-
+    if (!musicChannel) {
+        console.error('Could not find music channel!');
+    } else {
+        console.log('Music channel found successfully');
+    }
     console.log('I am ready!');
 });
 
-
-// Listen for the users local script to post the current track and log it to console.
-app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}!`))
+// Post endpoint for your local script
 app.post('/endpoint', (req, res) => {
-    let trackName = req.body.trackName;
+    let trackName = req.body.trackName || 'Unknown track';
+    console.log(`Received: ${trackName}`);
+    if (musicChannel) {
+        musicChannel.send(trackName);
+    }
     res.send('Track received!');
-    console.log(`Received ${trackName}`);
-
-    if (musicChannel) musicChannel.send(trackName); /* Post the current track in discord */
 });
 
-// Ping server every 15 minutes to prevent web dyno from sleeping.
-setInterval(function() {
-    http.get(inBotConfigs.renderApp);
-}, inBotConfigs.pingInterval);
+// Start the HTTP server
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}!`);
+});
 
-// Do not change unless you wanna break shit.
-client.login(mySecret);
+// Self-ping (mostly useless for keeping Render awake, but harmless)
+setInterval(() => {
+    http.get(inBotConfigs.renderApp, (res) => {
+        console.log(`Self-ping sent - Status: ${res.statusCode}`);
+    }).on('error', (e) => {
+        console.error('Self-ping error:', e.message);
+    });
+}, 900000);   // 15 minutes
