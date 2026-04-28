@@ -73,10 +73,6 @@ loginPromise
     console.error('❌ Login promise rejected:', err.message);
   });
 
-// Timeout in case it hangs completely
-setTimeout(() => {
-  console.error('⚠️  Login is taking too long (>30 seconds). Possible gateway issue or rate limit.');
-}, 30000);
 
 // ====================== EXPRESS SERVER ======================
 const express = require('express');
