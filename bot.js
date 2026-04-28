@@ -37,16 +37,13 @@ client.ws.on('close', (code, reason) => {
 
 // ====================== DISCORD LOGIN ======================
 console.log('Attempting to login to Discord...');
+console.log('Token length:', process.env.BOT_TOKEN ? process.env.BOT_TOKEN.length : 'MISSING');
 
 client.login(process.env.BOT_TOKEN)
-  .then(() => {
-    console.log('Login promise resolved successfully');
-  })
-  .catch(err => {
-    console.error('Login failed:', err);
-  });
+  .then(() => console.log('Login promise resolved successfully'))
+  .catch(err => console.error('Login promise rejected with error:', err.message));
 
-  
+
 // Message Array.
 const responseObject = {
     "test": "It worked!",
