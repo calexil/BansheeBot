@@ -14,6 +14,6 @@ do
         sleep 30
     else
         currentTrack=$track
-        curl --data "trackName=$currentTrack" https://web-production-1f155.up.railway.app/endpoint
+        curl --data "trackName=$currentTrack" https://bansheebot.up.railway.app/endpoint
     fi
 done
