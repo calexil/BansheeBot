@@ -63,13 +63,20 @@ client.on("messageCreate", (message) => {
 console.log('Attempting to login to Discord...');
 console.log('Token length:', process.env.BOT_TOKEN ? process.env.BOT_TOKEN.length : 'MISSING');
 
-client.login(process.env.BOT_TOKEN)
+const loginPromise = client.login(process.env.BOT_TOKEN);
+
+loginPromise
   .then(() => {
     console.log('✅ Login promise resolved successfully');
   })
   .catch(err => {
     console.error('❌ Login promise rejected:', err.message);
   });
+
+// Timeout in case it hangs completely
+setTimeout(() => {
+  console.error('⚠️  Login is taking too long (>30 seconds). Possible gateway issue or rate limit.');
+}, 30000);
 
 // ====================== EXPRESS SERVER ======================
 const express = require('express');
