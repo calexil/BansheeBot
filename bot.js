@@ -130,3 +130,6 @@ setInterval(() => {
         console.error('Self-ping error:', e.message);
     });
 }, 900000);
+
+// Do not change unless you wanna break shit.
+client.login(mySecret);
