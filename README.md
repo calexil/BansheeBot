@@ -1,5 +1,5 @@
 # ![icon](https://github.com/calexil/BansheeBot/blob/master/public/images/icon.png) BansheeBot
-[![Node.js CI](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml/badge.svg)](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml) [![CodeFactor](https://www.codefactor.io/repository/github/calexil/bansheebot/badge)](https://www.codefactor.io/repository/github/calexil/bansheebot) ![Railway Status](https://img.shields.io/endpoint?url=https://bansheebot.up.railway.app/health&label=Railway&style=for-the-badge&logo=railway) [![GitHub issues](https://img.shields.io/github/issues/calexil/BansheeBot.svg)](https://github.com/calexil/BansheeBot/issues)
+[![Node.js CI](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml/badge.svg)](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml) [![CodeFactor](https://www.codefactor.io/repository/github/calexil/bansheebot/badge)](https://www.codefactor.io/repository/github/calexil/bansheebot) ![Railway Status](https://img.shields.io/endpoint?url=https://bansheebot.up.railway.app/health&style=for-the-badge&logo=railway) [![GitHub issues](https://img.shields.io/github/issues/calexil/BansheeBot.svg)](https://github.com/calexil/BansheeBot/issues)
 
 
 ## Intro
