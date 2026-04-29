@@ -121,14 +121,14 @@ app.get('/health', (req, res) => {
             res.json({
                 schemaVersion: 1,
                 label: "Railway",
-                message: "live",
+                message: "Deployed",
                 color: "brightgreen"
             });
         } else {
             res.json({
                 schemaVersion: 1,
                 label: "Railway",
-                message: "down",
+                message: "Down",
                 color: "red"
             });
         }
@@ -136,7 +136,7 @@ app.get('/health', (req, res) => {
         res.json({
             schemaVersion: 1,
             label: "Railway",
-            message: "down",
+            message: "Down",
             color: "red"
         });
     }
