@@ -112,6 +112,25 @@ app.post('/endpoint', (req, res) => {
     res.send('Track received!');
 });
 
+// Health check route for status badge
+app.get('/health', (req, res) => {
+    const isReady = client.isReady() && musicChannel !== null;
+    
+    if (isReady) {
+        res.json({
+            status: "up",
+            bot: client.user ? client.user.tag : "unknown",
+            uptime: process.uptime(),
+            timestamp: new Date().toISOString()
+        });
+    } else {
+        res.status(503).json({
+            status: "down",
+            timestamp: new Date().toISOString()
+        });
+    }
+});
+
 // Start the HTTP server
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
