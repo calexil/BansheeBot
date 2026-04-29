@@ -118,12 +118,5 @@ app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
 });
 
-// Self-ping
-setInterval(() => {
-    http.get(inBotConfigs.renderApp, (res) => {
-        console.log(`Self-ping sent - Status: ${res.statusCode}`);
-    }).on('error', (e) => {
-        console.error('Self-ping error:', e.message);
-    });
-}, 900000); // Every 15 minutes
+
 
