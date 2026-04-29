@@ -114,19 +114,21 @@ app.post('/endpoint', (req, res) => {
 
 // Health check route for status badge
 app.get('/health', (req, res) => {
-    const isReady = client.isReady() && musicChannel !== null;
+    const isHealthy = client.isReady() && musicChannel !== null;
     
-    if (isReady) {
+    if (isHealthy) {
         res.json({
-            status: "up",
-            bot: client.user ? client.user.tag : "unknown",
-            uptime: process.uptime(),
-            timestamp: new Date().toISOString()
+            schemaVersion: 1,
+            label: "Railway",
+            message: "deployed",
+            color: "brightgreen"
         });
     } else {
-        res.status(503).json({
-            status: "down",
-            timestamp: new Date().toISOString()
+        res.json({
+            schemaVersion: 1,
+            label: "Railway",
+            message: "down",
+            color: "red"
         });
     }
 });
