@@ -114,16 +114,25 @@ app.post('/endpoint', (req, res) => {
 
 // Health check route for status badge
 app.get('/health', (req, res) => {
-    const isHealthy = client.isReady() && musicChannel !== null;
-    
-    if (isHealthy) {
-        res.json({
-            schemaVersion: 1,
-            label: "Railway",
-            message: "deployed",
-            color: "brightgreen"
-        });
-    } else {
+    try {
+        const isHealthy = client.isReady() && musicChannel !== null;
+
+        if (isHealthy) {
+            res.json({
+                schemaVersion: 1,
+                label: "Railway",
+                message: "live",
+                color: "brightgreen"
+            });
+        } else {
+            res.json({
+                schemaVersion: 1,
+                label: "Railway",
+                message: "down",
+                color: "red"
+            });
+        }
+    } catch (err) {
         res.json({
             schemaVersion: 1,
             label: "Railway",
@@ -132,6 +141,7 @@ app.get('/health', (req, res) => {
         });
     }
 });
+
 
 // Start the HTTP server
 const PORT = process.env.PORT || 10000;
