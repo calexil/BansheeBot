@@ -1,6 +1,32 @@
-const { Client, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
+const {
+  Client,
+  GatewayIntentBits,
+  Options,
+  Partials,
+} = require('discord.js');
 
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
+
+  partials: [],
+
+  makeCache: Options.cacheWithLimits({
+    MessageManager: 10,
+    GuildMemberManager: 0,
+    PresenceManager: 0,
+    ReactionManager: 0,
+    ReactionUserManager: 0,
+    UserManager: 25,
+    ThreadManager: 0,
+    ThreadMemberManager: 0,
+    VoiceStateManager: 0,
+    StageInstanceManager: 0,
+  }),
+});
 
 
 // Add/enhance these event listeners:
