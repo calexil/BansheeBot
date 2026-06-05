@@ -62,7 +62,7 @@ Edit `bansheecheck.sh` (or `rhythmboxcheck.sh`):
 
 Make executable and run:
 
-```￼chmod +x bansheecheck.sh
+```chmod +x bansheecheck.sh
 ./bansheecheck.sh```
 ￼
 Now play music — it should start posting to Discord!
