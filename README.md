@@ -62,9 +62,9 @@ Edit `bansheecheck.sh` (or `rhythmboxcheck.sh`):
 
 Make executable and run:
 
-`chmod +x bansheecheck.sh
+`chmod +x bansheecheck.sh`
 
-./bansheecheck.sh`
+`./bansheecheck.sh`
 ￼
 Now play music — it should start posting to Discord!
 
@@ -81,13 +81,13 @@ Some examples:
 
 # Project Structure
 
-BansheeBot/
-├── bot.js                 # Main Discord + Express bot
-├── bansheecheck.sh        # Music checker for Banshee
-├── rhythmboxcheck.sh      # Music checker for Rhythmbox
-├── Commands.md
-├── package.json
-└── public/
+     BansheeBot/
+     ├── bot.js                 # Main Discord + Express bot
+     ├── bansheecheck.sh        # Music checker for Banshee
+     ├── rhythmboxcheck.sh      # Music checker for Rhythmbox
+     ├── Commands.md
+     ├── package.json
+     └── public/
 
 # Troubleshooting
 
