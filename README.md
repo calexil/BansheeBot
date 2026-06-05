@@ -48,7 +48,7 @@ npm install
 
 **Recommended:** Deploy on Railway.app (one-click from GitHub)
 
-## Other Options:
+### Other Options:
 
 * Render
 * Oracle Cloud
