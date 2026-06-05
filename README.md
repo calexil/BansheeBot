@@ -27,7 +27,7 @@
 - Linux machine with **Banshee** or **Rhythmbox** installed
 
 ### 1. Clone & Install
-```bash
+
 git clone https://github.com/calexil/BansheeBot.git
 cd BansheeBot
 npm install
