@@ -27,10 +27,9 @@
 - Linux machine with **Banshee** or **Rhythmbox** installed
 
 ### 1. Clone & Install
+**Clone the repo**
 
-git clone https://github.com/calexil/BansheeBot.git
-cd BansheeBot
-npm install
+`git clone https://github.com/calexil/BansheeBot.git`
 
 ### 2. Discord Bot Setup
 
