@@ -1,26 +1,100 @@
 # ![icon](https://github.com/calexil/BansheeBot/blob/master/public/images/icon.png) BansheeBot
 [![Node.js CI](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml/badge.svg)](https://github.com/calexil/BansheeBot/actions/workflows/node.js.yml) [![CodeFactor](https://www.codefactor.io/repository/github/calexil/bansheebot/badge)](https://www.codefactor.io/repository/github/calexil/bansheebot) ![Railway](https://img.shields.io/endpoint?url=https://bansheebot.up.railway.app/health&style=flat&logo=railway) [![GitHub issues](https://img.shields.io/github/issues/calexil/BansheeBot.svg)](https://github.com/calexil/BansheeBot/issues)
 
+**A simple Discord bot** that reads the currently playing track from **Banshee** or **Rhythmbox** on Linux and posts it to a Discord channel. Also includes fun/silly commands.
 
-## Intro
-A simple discord bot that reads the song info from the currently playing track in Banshee media player or Rhythmbox media player and displays it in a Discord channel. Also includes some silly commands you can edit.
+## Features
 
-## Installation
+- Automatically posts song info (`Artist - Track`) when music is playing
+- Supports **Banshee** and **Rhythmbox**
+- Simple keyword/silly commands (easy to customize)
+- Lightweight Express server for receiving updates
+- Easy deployment on Railway (or any Node.js host)
 
-* 1: Clone the repo: `git clone https://github.com/calexil/BansheeBot.git` or fork it.
-* 2: Make a new app with the [discord developer dashboard](https://discordapp.com/developers/applications/me) and note your client secret.
-* 3: Link your free Railway.app account to github and deploy your fork or clone, be sure to set your config vars with an item KEY of BOT_TOKEN and a value of the aforementioned client secret from your discord bot app.
-* 4: Edit the file [bot.js at line 87](https://github.com/calexil/BansheeBot/blob/master/bot.js#L87) to match your music channels Id - [How to get a Discord Channels Id #](https://imgur.com/a/ddePf8D).
-* 4-a: Invite the bot from the discord developer dash by creating an invite link and making sure to give the 'bot' scope, and the 'Send Messages' Permission.
-* 5: Start Banshee or Rhythmbox, Play music and then run the [bansheecheck.sh script](https://github.com/calexil/BansheeBot/blob/master/bansheecheck.sh) or the [rhythmboxcheck.sh script](https://github.com/calexil/BansheeBot/blob/master/rhythmboxcheck.sh), be sure to edit it to match your username and Railway.app app page endpoint
-* 6: Check out the [Command list here](https://github.com/calexil/BansheeBot/blob/master/Commands.md)
-* 7: Watch it go. 
+## How It Works
+
+1. A local shell script (`bansheecheck.sh` or `rhythmboxcheck.sh`) periodically checks your music player.
+2. The script sends the current track to the bot's web endpoint.
+3. The bot posts the song information to your designated Discord music channel.
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- Discord bot token
+- Linux machine with **Banshee** or **Rhythmbox** installed
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/calexil/BansheeBot.git
+cd BansheeBot
+npm install
+
+### 2. Discord Bot Setup
+
+1. Go to the Discord Developer Portal
+2. Create a new Application → Bot → Copy the Token
+3. Invite the bot to your server with Send Messages permission
+
+### 3. Configure
+
+* Edit bot.js and update the musicChannelId with your target Discord channel ID.
+* Set your bot token:
+```export BOT_TOKEN="your_bot_token_here"```
+
+### 4. Deploy the Bot
+
+**Recommended:** Deploy on Railway.app (one-click from GitHub)
+
+## Other Options:
+
+* Render
+* Oracle Cloud
+
+### 5. Run the Music Checker (on your Linux machine)
+
+Edit `bansheecheck.sh` (or `rhythmboxcheck.sh`):
+
+* Update the endpoint URL to match where your bot is running
+* Update your username if needed
+
+Make executable and run:
+
+```￼chmod +x bansheecheck.sh
+./bansheecheck.sh```
+￼
+Now play music — it should start posting to Discord!
+
+# Commands
+
+See full list in Commands.md
+
+Some examples:
+
+* `test`
+* `good bot / bad bot`
+* `best girl?`
+* `!help`
+
+# Project Structure
+
+BansheeBot/
+├── bot.js                 # Main Discord + Express bot
+├── bansheecheck.sh        # Music checker for Banshee
+├── rhythmboxcheck.sh      # Music checker for Rhythmbox
+├── Commands.md
+├── package.json
+└── public/
+
+# Troubleshooting
+
+* Bot not posting songs? → Check the shell script URL, channel ID, and permissions.
+
+* Login issues? → Make sure BOT_TOKEN environment variable is set correctly.
+
+* Too many posts? → Adjust sleep time in the shell script.
 
 ## Bug Reporting
 ### [Submit Issues here](https://github.com/calexil/BansheeBot/issues/new)
-
-## Credits
-
-* [Calexil](https://github.com/calexil)
-* [TimboKZ](https://github.com/TimboKZ)
-
